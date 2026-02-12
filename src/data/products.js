@@ -34,4 +34,25 @@ export const products = [
     image: "https://placehold.co/600x400",
     category: "Kebutuhan Rumah Tangga",
   },
+  {
+    id: 6,
+    name: "Fanta 1.5L",
+    price: 12000,
+    image: "https://placehold.co/600x400",
+    category: "Minuman",
+  },
+  {
+    id: 7,
+    name: "Aqua 600ml",
+    price: 5000,
+    image: "https://placehold.co/600x400",
+    category: "Minuman",
+  },
+  {
+    id: 8,
+    name: "Goodday Capuccino 200ml",
+    price: 8000,
+    image: "https://placehold.co/600x400",
+    category: "Minuman",
+  },
 ];

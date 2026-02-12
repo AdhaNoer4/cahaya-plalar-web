@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { products } from "../data/products";
 import ProductCard from "./ProductCard";
-import { button } from "framer-motion/client";
+import { motion } from "framer-motion";
 
 export default function ProductGrid() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const categories = ["All", "Sembako", "Kebutuhan Rumah Tangga"];
+  const categories = ["All", "Sembako", "Kebutuhan Rumah Tangga", "Minuman"];
 
   const filterredProducts = selectedCategory === "All" ? products : products.filter((product) => product.category === selectedCategory);
 
@@ -17,14 +17,15 @@ export default function ProductGrid() {
         {/* Filter Buttons */}
         <div className="flex justify-center gap-4 mb-10">
           {categories.map((cat) => (
-            <button
+            <motion.button
+              whileHover={{ scale: selectedCategory === cat ? 1.05 : 1 }}
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-lg border
+              className={`px-4 py-2 rounded-lg border hover:opacity-80
               ${selectedCategory === cat ? "bg-blue-600 text-white" : "bg-white text-gray-700"}`}
             >
               {cat}
-            </button>
+            </motion.button>
           ))}
         </div>
 
